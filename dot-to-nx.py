@@ -5,7 +5,7 @@ import logging
 import sys
 import networkx as nx
 
-base_folder = '/storage2/yueke/'
+base_folder = '/storage2/
 sample_folder = os.path.join(base_folder, 'projects')
 
 severity = sys.argv[1]
@@ -16,7 +16,6 @@ else:
 
 # configure logging
 timestr = time.strftime("%Y%m%d-%H%M%S")
-log_file = os.path.join('/home/yueke/logs/', f'dotnx_{timestr}.log')
 targets = logging.StreamHandler(sys.stdout), logging.FileHandler(log_file)
 logging.basicConfig(format='%(message)s', level=logging.INFO, handlers=targets)
 
