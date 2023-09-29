@@ -7,7 +7,7 @@ import smtplib
 import ssl
 from asyncio.subprocess import DEVNULL
 
-base_folder = '/storage2/yueke/'
+base_folder = '/storage2/'
 sample_folder = os.path.join(base_folder, 'projects')
 severities = ['low', 'crit', 'med', 'high']
 
@@ -39,28 +39,17 @@ def run_cflow(repo_folder: str, analysis_folder: str):
         with open(os.path.join(analysis_folder, 'cflow-fail'), 'w'): pass
 
 
-def send_email(subject: str, body: str) -> None:
 
-    message = f"""\
-Subject: {subject}
-
-{body}"""
-
-    with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
-        server.login(sender_email, password)
-        server.sendmail(sender_email, receiver_email, message)
 
 port = 465
 smtp_server = 'smtp.gmail.com'
-sender_email = 'nicole.developer.acct@gmail.com'
-receiver_email = 'nicole.e.cuthbert+cumberland@vanderbilt.edu'
+
 password = 'anqhowsgeeotlwqd'
 context = ssl.create_default_context()
 
 
 # configure logging
 timestr = time.strftime("%Y%m%d-%H%M%S")
-log_file = os.path.join('/home/yueke/logs/', f'cflow2_{timestr}.log')
 targets = logging.StreamHandler(sys.stdout), logging.FileHandler(log_file)
 logging.basicConfig(format='%(message)s', level=logging.INFO, handlers=targets)
 
