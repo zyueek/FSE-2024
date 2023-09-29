@@ -11,3 +11,5 @@ cflow_dot.py generates the dot in call graph with cflow.
 dot-to-nx.py generates graph with dots in cflow.
 
 nx-to-log-dist.py generates logical distance from call graph.
+
+calculate_distances.py generates the file distance and line distance for static analyzer.
