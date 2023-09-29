@@ -9,3 +9,5 @@ The all_info_log.7z is the csv file containing logical distance for all five too
 cflow_dot.py generates the dot in call graph with cflow.           
 
 dot-to-nx.py generates graph with dots in cflow.
+
+nx-to-log-dist.py generates logical distance from call graph.
