@@ -14,7 +14,7 @@ from tqdm import *
 
 pd.options.mode.chained_assignment = None
 
-base_folder = '/storage2/yueke/'
+base_folder = '/storage2'
 sample_folder = os.path.join(base_folder, 'projects')
 
 severity = sys.argv[1]
